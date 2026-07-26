@@ -23,6 +23,7 @@ import HeroOverlay from "@/components/ui/HeroOverlay";
 import SiteFooter from "@/components/ui/SiteFooter";
 import GalleryOverlay from "@/components/overlays/GalleryOverlay";
 import DashboardNav from "@/components/ui/DashboardNav";
+import CastOverlay from "@/components/overlays/CastOverlay";
 
 // Master timeline positions (arbitrary units; ScrollTrigger scrubs scroll→time).
 // Matches the SCROLL section heights (vh/100) so the scrub feels even.
@@ -49,7 +50,9 @@ const T = {
   mcuEnd: 44.3,
   titleStart: 44.0, // Section 7 — AVENGERS DOOMSDAY title reveal fades in (overlap)
   titleFadeEnd: 44.9,
-  footerStart: 47.6, // the minimal footer rises at the very end
+  castStart: 47.0, // Section 8 - Cast Reveal
+  castEnd: 50.5,
+  footerStart: 51.1, // the minimal footer rises at the very end
   // total is derived from SCROLL so the scroll↔time map never drifts; the last
   // tween (footer) ends here to pad the timeline.
   total: TIMELINE_UNITS,
@@ -203,6 +206,10 @@ export default function Experience() {
     tl.to(signals, { title: 1, duration: T.titleFadeEnd - T.titleStart, ease: "power2.out" }, T.titleStart);
     tl.to(signals, { energy: 0.17, duration: 1.2, ease: "power1.inOut" }, T.titleStart);
 
+    // ── Section 8 · the CAST reveal ──
+    tl.to(signals, { cast: 1, duration: T.castEnd - T.castStart, ease: "power2.inOut" }, T.castStart);
+    tl.to(signals, { energy: 0.1, duration: 1.0 }, T.castStart);
+
     // ── Footer · a minimal close rises at the very end (ends at T.total) ──
     tl.to(signals, { footer: 1, duration: T.total - T.footerStart, ease: "power2.out" }, T.footerStart);
 
@@ -225,6 +232,7 @@ export default function Experience() {
   const finaleVh = SCROLL.finaleScrub;
   const mcuVh = SCROLL.mcuPan;
   const titleVh = SCROLL.titleHold;
+  const castVh = SCROLL.castReveal;
   const footerVh = SCROLL.footerReveal;
 
   return (
@@ -256,6 +264,7 @@ export default function Experience() {
       <SiteFooter />
       <GalleryOverlay />
       <ScrollCue />
+      <CastOverlay />
 
       {/* invisible scroll track — the distance the scrub travels over */}
       <div className="scroll-track" ref={trackRef} aria-hidden>
@@ -267,6 +276,7 @@ export default function Experience() {
         <section style={{ height: `${finaleVh}vh` }} aria-label="Finale" />
         <section style={{ height: `${mcuVh}vh` }} aria-label="Saga" />
         <section style={{ height: `${titleVh}vh` }} aria-label="Title" />
+        <section style={{ height: `${castVh}vh` }} aria-label="Cast" />
         <section style={{ height: `${footerVh}vh` }} aria-label="Footer" />
       </div>
     </>

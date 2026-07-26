@@ -80,6 +80,7 @@ export const SCROLL = {
   // ── Ending · Section 6 (MCU timeline artwork) + 7 (title reveal) + footer ──
   mcuPan: 560, // the tall MCU timeline pans vertically with scroll
   titleHold: 300, // the AVENGERS DOOMSDAY title reveal autoplays/holds
+  castReveal: 350, // Section 8 — cast
   footerReveal: 150, // the minimal footer rises at the very end
 } as const;
 

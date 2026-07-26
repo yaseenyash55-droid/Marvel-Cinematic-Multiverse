@@ -42,6 +42,7 @@ export interface Signals {
   mcu: number; // Section 6 (MCU timeline image) vertical scroll-pan (0..1)
   title: number; // Section 7 (AVENGERS DOOMSDAY title reveal video) reveal (0..1)
   footer: number; // footer reveal (0..1)
+  cast: number; // Section 8 (cast reveal) (0..1)
   // Housekeeping
   strikeSeq: number;
   lastStrike: number;
@@ -78,6 +79,7 @@ export const signals: Signals = {
   mcu: 0,
   title: 0,
   footer: 0,
+  cast: 0,
   strikeSeq: 0,
   lastStrike: -999,
 };

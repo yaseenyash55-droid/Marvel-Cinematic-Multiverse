@@ -14,6 +14,7 @@ const SECTIONS = [
   { id: "Finale", label: "Finale", index: 5 },
   { id: "Saga", label: "Saga", index: 6 },
   { id: "Title", label: "Title", index: 7 },
+  { id: "Cast", label: "Cast", index: 8 },
 ];
 
 export default function DashboardNav() {
@@ -23,8 +24,9 @@ export default function DashboardNav() {
     // Determine active section based on scroll progress
     const s = signals.scroll;
     let idx = 0;
-    if (s > 0.95) idx = 7; // Title/Footer
-    else if (s > 0.8) idx = 6; // Saga/MCU
+    if (s > 0.95) idx = 8; // Cast/Footer
+    else if (s > 0.86) idx = 7; // Title
+    else if (s > 0.77) idx = 6; // Saga/MCU
     else if (s > 0.65) idx = 5; // Finale
     else if (s > 0.5) idx = 4; // Timeline (Reel)
     else if (s > 0.35) idx = 3; // Story
