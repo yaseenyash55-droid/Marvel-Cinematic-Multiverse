@@ -80,16 +80,36 @@ export default function CharacterOrbit() {
     });
   }, []);
 
+    const rotationOffset = useRef(0);
+    const targetOffset = useRef(0);
+
+    // Keyboard navigation listener
+    useEffect(() => {
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (signals.showcase < 0.1) return; // Only active when this section is visible
+        if (e.key === "ArrowRight") {
+          targetOffset.current -= TAU / CHARACTERS.length;
+        } else if (e.key === "ArrowLeft") {
+          targetOffset.current += TAU / CHARACTERS.length;
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => window.removeEventListener("keydown", handleKeyDown);
+    }, []);
+
   useRaf(() => {
     const s = signals.showcase;
     const t = signals.time;
     const vw = window.innerWidth;
     const vh = window.innerHeight;
 
+    // smoothly interpolate the keyboard rotation offset
+    rotationOffset.current += (targetOffset.current - rotationOffset.current) * 0.1;
+
     const wantPlay = s > 0.006; // play while the section is (near) visible
     const Rx = vw * 0.3; // horizontal orbit radius
     const Ry = vh * 0.15; // vertical tilt (front lower, back higher)
-    const base = s * TAU * 0.85 + t * 0.045; // scroll rotates the ring + slow idle
+    const base = s * TAU * 0.85 + t * 0.045 + rotationOffset.current; // scroll rotates the ring + slow idle + keyboard offset
     const N = CHARACTERS.length;
 
     for (let i = 0; i < N; i++) {

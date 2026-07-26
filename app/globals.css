@@ -2,6 +2,8 @@
    AVENGERS: DOOMSDAY — global cinematic base
    ============================================================ */
 
+@import './enhance.css';
+
 :root {
   --black: #000000;
   --graphite: #07090b;
@@ -115,20 +117,20 @@ a {
   pointer-events: none;
   background: transparent;
   will-change: opacity;
-  filter: brightness(1.12) contrast(1.06) saturate(1.08)
-    drop-shadow(0 0 60px rgba(0, 255, 156, 0.25));
+  image-rendering: high-quality; /* Enhanced picture quality */
+  filter: brightness(1.05) contrast(1.1) saturate(1.15)
+    drop-shadow(0 0 40px rgba(0, 255, 156, 0.4));
 }
 
-/* Sections 3–5 all live between the video (z1) and the atmosphere (z3), so the
-   shared green particles/fog wash over every one consistently. Only one is ever
-   on screen at a time (each gated + faded by its own signal). */
+/* Sections 3–5 all live above the atmosphere (z3), so the particles 
+   and fog stay firmly in the background and do not obscure the video/pictures. */
 .story-layer,
 .reel-layer,
 .mcu-layer,
 .title-layer {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 4;
   overflow: hidden;
   pointer-events: none;
 }

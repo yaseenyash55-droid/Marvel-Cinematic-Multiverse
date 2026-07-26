@@ -13,7 +13,7 @@ import VideoLayer from "@/components/overlays/VideoLayer";
 import CharacterOrbit from "@/components/overlays/CharacterOrbit";
 import StoryStack from "@/components/overlays/StoryStack";
 import HorizontalReel from "@/components/overlays/HorizontalReel";
-import TimelineImage from "@/components/overlays/TimelineImage";
+import TimelineInteractive from "@/components/overlays/TimelineInteractive";
 import TitleReveal from "@/components/overlays/TitleReveal";
 import FlashOverlay from "@/components/overlays/FlashOverlay";
 import CinematicText from "@/components/overlays/CinematicText";
@@ -21,6 +21,8 @@ import ScrollCue from "@/components/ui/ScrollCue";
 import SiteHeader from "@/components/ui/SiteHeader";
 import HeroOverlay from "@/components/ui/HeroOverlay";
 import SiteFooter from "@/components/ui/SiteFooter";
+import GalleryOverlay from "@/components/overlays/GalleryOverlay";
+import DashboardNav from "@/components/ui/DashboardNav";
 
 // Master timeline positions (arbitrary units; ScrollTrigger scrubs scroll→time).
 // Matches the SCROLL section heights (vh/100) so the scrub feels even.
@@ -235,8 +237,8 @@ export default function Experience() {
         {/* Section 4 — horizontal cinematic timeline (z-index 2) */}
         <HorizontalReel />
         {/* Section 5 — the battle is a scroll-scrubbed <video> in VideoLayer (z1) */}
-        {/* Section 6 — the MCU timeline artwork pans vertically (z-index 2) */}
-        <TimelineImage />
+        {/* Section 6 — the MCU timeline interactive component (z-index 2) */}
+        <TimelineInteractive />
         {/* Section 7 — the AVENGERS DOOMSDAY title reveal, autoplay/loop (z-index 2) */}
         <TitleReveal />
         {/* Section 2 — character video cards; z-auto wrapper so each card's
@@ -248,9 +250,11 @@ export default function Experience() {
         <CinematicText />
       </div>
 
+      <DashboardNav />
       <SiteHeader />
       <HeroOverlay />
       <SiteFooter />
+      <GalleryOverlay />
       <ScrollCue />
 
       {/* invisible scroll track — the distance the scrub travels over */}

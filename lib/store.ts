@@ -14,10 +14,13 @@ interface ExperienceState {
   started: boolean; // first user gesture (used to (re)prime the video decoders)
   reduceMotion: boolean;
 
+  activeGallery: string | null;
+
   setPhase: (p: Phase) => void;
   setReady: (v: boolean) => void;
   start: () => void;
   setReduceMotion: (v: boolean) => void;
+  setActiveGallery: (gallery: string | null) => void;
 }
 
 export const useExperience = create<ExperienceState>((set) => ({
@@ -25,11 +28,13 @@ export const useExperience = create<ExperienceState>((set) => ({
   ready: false,
   started: false,
   reduceMotion: false,
+  activeGallery: null,
 
   setPhase: (phase) => set({ phase }),
   setReady: (ready) => set({ ready }),
   start: () => set({ started: true }),
   setReduceMotion: (reduceMotion) => set({ reduceMotion }),
+  setActiveGallery: (activeGallery) => set({ activeGallery }),
 }));
 
 export const experience = useExperience;

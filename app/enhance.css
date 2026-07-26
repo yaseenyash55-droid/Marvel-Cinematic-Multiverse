@@ -1,0 +1,11 @@
+/* Add to global CSS for better media rendering */
+img, video {
+  image-rendering: high-quality;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: bicubic;
+}
+
+/* Also boost contrast and sharpness slightly for all timeline elements */
+.timeline-enhanced-media {
+  filter: contrast(1.05) saturate(1.1);
+}

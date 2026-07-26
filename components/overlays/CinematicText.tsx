@@ -40,7 +40,7 @@ const BEATS: Beat[] = [
   // ── Hero · trailer climax ──
   { id: "end", lines: ["THE END BEGINS"], startU: 10.6, endU: 11.15, variant: "rise" },
   // ── Section 5 · the battle (Thor → Doom → Captain America) ──
-  { id: "thor", lines: ["THOR ENTERS", "THE FRAY"], startU: 31.95, endU: 33.3, variant: "loom" },
+  { id: "thor", lines: ["THOR ENTRY", "IS BANGER"], startU: 31.95, endU: 33.3, variant: "loom" },
   { id: "thunder", lines: ["THE GOD OF THUNDER"], startU: 35.8, endU: 36.8, variant: "metallic" },
   { id: "cap", lines: ["THE FIRST", "AVENGER RETURNS"], startU: 37.5, endU: 38.35, variant: "rise" },
 ];

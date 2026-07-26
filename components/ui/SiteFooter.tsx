@@ -10,18 +10,25 @@ import styles from "./footer.module.css";
  * `signals.footer`. Minimal + elegant, in the same dark-green cinematic language.
  * Links are placeholders for now.
  */
+import { useExperience } from "@/lib/store";
+
 const clamp01 = (x: number) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smoothstep = (a: number, b: number, x: number) => {
   const t = clamp01((x - a) / (b - a));
   return t * t * (3 - 2 * t);
 };
 
-const NAV = ["Overview", "Characters", "Story", "Timeline"];
-const SOCIAL = ["Instagram", "X", "YouTube"];
+const NAV = ["Overview", "Universe", "SuperHeroes / Super Villains", "Trailers"];
+const SOCIAL = [
+  { name: "Instagram", url: "https://www.instagram.com/comi.ccast?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" },
+  { name: "Telegram", url: "https://t.me/doom5129" },
+  { name: "YouTube", url: "https://www.youtube.com/@comiccast-ymy" }
+];
 
 export default function SiteFooter() {
   const wrapRef = useRef<HTMLDivElement>(null);
   const footRef = useRef<HTMLElement>(null);
+  const setActiveGallery = useExperience((s) => s.setActiveGallery);
 
   useRaf(() => {
     const foot = signals.footer;
@@ -37,8 +44,6 @@ export default function SiteFooter() {
       footRef.current.style.opacity = smoothstep(0, 0.25, foot).toFixed(3);
     }
   });
-
-  const noop = (e: React.MouseEvent) => e.preventDefault();
 
   return (
     <div className={styles.wrap} ref={wrapRef} style={{ visibility: "hidden" }}>
@@ -56,7 +61,14 @@ export default function SiteFooter() {
             <div className={styles.colHead}>Explore</div>
             <div className={styles.links}>
               {NAV.map((l) => (
-                <a key={l} href="#" onClick={noop}>
+                <a 
+                  key={l} 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setActiveGallery(l);
+                  }}
+                >
                   {l}
                 </a>
               ))}
@@ -67,8 +79,8 @@ export default function SiteFooter() {
             <div className={styles.colHead}>Follow</div>
             <div className={styles.social}>
               {SOCIAL.map((l) => (
-                <a key={l} href="#" onClick={noop}>
-                  {l}
+                <a key={l.name} href={l.url} target="_blank" rel="noopener noreferrer">
+                  {l.name}
                 </a>
               ))}
             </div>
@@ -77,7 +89,7 @@ export default function SiteFooter() {
 
         <div className={styles.rule} />
         <div className={styles.base}>
-          <span>© 2026 · Placeholder — fan concept, not affiliated with Marvel.</span>
+          <span>© 2026 Comic Cast. All rights reserved.</span>
           <span>Built as a cinematic web experience.</span>
         </div>
       </footer>
