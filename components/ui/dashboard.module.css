@@ -54,3 +54,21 @@
   opacity: 1;
   transform: translateY(-50%) translateX(5px);
 }
+
+@media (max-width: 768px) {
+  .dashboard {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+  }
+  .label {
+    display: none;
+  }
+}

@@ -132,3 +132,9 @@
     width: clamp(230px, 62vw, 460px);
   }
 }
+
+@media (max-width: 768px) {
+  .orbitContainer {
+    transform: scale(0.6);
+  }
+}

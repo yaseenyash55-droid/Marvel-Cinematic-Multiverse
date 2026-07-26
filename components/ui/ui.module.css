@@ -283,3 +283,15 @@
   background: linear-gradient(90deg, var(--green), var(--mint));
   box-shadow: 0 0 10px rgba(0, 255, 156, 0.8);
 }
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+  .mark {
+    font-size: 1.5rem;
+  }
+  .links {
+    display: none; /* Hide standard links on mobile to save space, rely on dashboard nav */
+  }
+}

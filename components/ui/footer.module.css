@@ -142,3 +142,15 @@
     grid-column: 1 / -1;
   }
 }
+
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .base {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}

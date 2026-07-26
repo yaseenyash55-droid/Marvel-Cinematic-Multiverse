@@ -187,3 +187,16 @@
     font-size: clamp(2.4rem, 13vw, 4rem);
   }
 }
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 20px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .desc {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}

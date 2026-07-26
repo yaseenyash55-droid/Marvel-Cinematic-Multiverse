@@ -85,3 +85,23 @@
   margin: 0;
   transform: translateZ(20px);
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  .grid {
+    gap: 15px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+  .card {
+    width: 160px;
+    height: 240px;
+  }
+}

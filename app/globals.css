@@ -179,3 +179,9 @@ a {
 .scroll-track section {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: 14px;
+  }
+}

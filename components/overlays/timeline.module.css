@@ -341,3 +341,12 @@
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 768px) {
+  .timelineContainer {
+    padding-top: 40px;
+  }
+  .timelineHeader {
+    font-size: 2rem;
+  }
+}

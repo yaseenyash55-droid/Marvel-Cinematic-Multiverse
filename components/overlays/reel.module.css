@@ -234,3 +234,17 @@
   .status, .caption, .timecode { left: 34px; }
   .timecode { right: 34px; }
 }
+
+@media (max-width: 768px) {
+  .card {
+    width: 280px;
+    height: 400px;
+    margin: 0 10px;
+  }
+  .date {
+    font-size: 1.2rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+}
