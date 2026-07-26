@@ -7,11 +7,11 @@ import styles from "./cast.module.css";
 import { motion } from "framer-motion";
 
 const CAST = [
-  { id: 1, name: "Robert Downey Jr.", role: "Doctor Doom", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/5qHNjhtjMD4YWH3UP0rm4tKwxIQ.jpg" },
-  { id: 2, name: "Pedro Pascal", role: "Mr. Fantastic", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/lrsjncoCGfsIrcxoEhaVNEfsPpo.jpg" },
-  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/zluWlhTqC9gYntV2LdFf6zLqAvo.jpg" },
-  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/n5E8EhwB9xQ5F9X8U9YQYpZJ1oJ.jpg" },
-  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/7aD8hV5x9YfFvJ9iCjYk5Qf9M5N.jpg" },
+  { id: 1, name: "Robert Downey Jr.", role: "Doctor Doom", img: "https://upload.wikimedia.org/wikipedia/commons/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg" },
+  { id: 2, name: "Pedro Pascal", role: "Mr. Fantastic", img: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Pedro_Pascal_by_Gage_Skidmore.jpg" },
+  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vanessa_Kirby_in_2024.jpg" },
+  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://upload.wikimedia.org/wikipedia/commons/6/69/Joseph_Quinn_by_Gage_Skidmore.jpg" },
+  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://upload.wikimedia.org/wikipedia/commons/d/db/Ebon_Moss-Bachrach_%2834710185121%29_%28cropped%29.jpg" },
 ];
 
 export default function CastOverlay() {
