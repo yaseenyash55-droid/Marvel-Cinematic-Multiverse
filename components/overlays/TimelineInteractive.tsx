@@ -53,18 +53,24 @@ export default function TimelineInteractive() {
             </h2>
             
             <div style={{ width: '100%', maxWidth: '1400px', margin: '40px auto 60px auto', textAlign: 'center' }}>
-              <img 
-                src="/images/timeline_infographic.jpg" 
-                alt="Complete Marvel Chronological Timeline"
-                style={{
-                  width: '100%', 
-                  height: 'auto', 
-                  borderRadius: '16px', 
-                  boxShadow: '0 20px 60px rgba(0,255,156,0.15)',
-                  border: '1px solid rgba(0, 255, 156, 0.2)',
-                  objectFit: 'contain'
-                }} 
-              />
+              <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '12px', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+                Swipe horizontally to explore timeline
+              </p>
+              <div style={{ width: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch', paddingBottom: '20px' }}>
+                <img 
+                  src="/images/timeline_infographic.jpg" 
+                  alt="Complete Marvel Chronological Timeline"
+                  style={{
+                    minWidth: '1200px', // Forces high resolution rendering on mobile
+                    width: '100%', 
+                    height: 'auto', 
+                    borderRadius: '16px', 
+                    boxShadow: '0 20px 60px rgba(0,255,156,0.15)',
+                    border: '1px solid rgba(0, 255, 156, 0.2)',
+                    objectFit: 'contain'
+                  }} 
+                />
+              </div>
             </div>
             
             <div className={styles.timelineNodes}>
