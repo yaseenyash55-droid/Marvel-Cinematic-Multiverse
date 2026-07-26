@@ -67,10 +67,35 @@ export default function TimelineInteractive() {
                     borderRadius: '16px', 
                     boxShadow: '0 20px 60px rgba(0,255,156,0.15)',
                     border: '1px solid rgba(0, 255, 156, 0.2)',
-                    objectFit: 'contain'
+                    objectFit: 'contain',
+                    marginBottom: '20px'
                   }} 
                 />
               </div>
+
+              <a 
+                href="/timeline.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  marginTop: '10px',
+                  padding: '12px 24px',
+                  background: 'rgba(0, 255, 156, 0.1)',
+                  color: '#00ff9c',
+                  border: '1px solid #00ff9c',
+                  borderRadius: '30px',
+                  textDecoration: 'none',
+                  fontFamily: 'Space Grotesk',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  fontWeight: 'bold',
+                  boxShadow: '0 0 20px rgba(0, 255, 156, 0.2)',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                📄 Open Crystal-Clear PDF Version
+              </a>
             </div>
             
             <div className={styles.timelineNodes}>
