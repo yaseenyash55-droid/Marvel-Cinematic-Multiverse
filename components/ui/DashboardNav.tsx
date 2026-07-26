@@ -19,6 +19,14 @@ const SECTIONS = [
 
 export default function DashboardNav() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useRaf(() => {
     // Determine active section based on scroll progress
@@ -48,6 +56,19 @@ export default function DashboardNav() {
 
   return (
     <nav className={styles.dashboard}>
+      <button 
+        className={styles.navBtn} 
+        onClick={() => activeIndex > 0 && jumpTo(activeIndex - 1)}
+        disabled={activeIndex === 0}
+        aria-label="Previous Section"
+      >
+        {isMobile ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        )}
+      </button>
+
       {SECTIONS.map((sec, i) => (
         <button
           key={sec.id}
@@ -58,6 +79,19 @@ export default function DashboardNav() {
           <span className={styles.label}>{sec.label}</span>
         </button>
       ))}
+
+      <button 
+        className={styles.navBtn} 
+        onClick={() => activeIndex < SECTIONS.length - 1 && jumpTo(activeIndex + 1)}
+        disabled={activeIndex === SECTIONS.length - 1}
+        aria-label="Next Section"
+      >
+        {isMobile ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        )}
+      </button>
     </nav>
   );
 }
