@@ -9,9 +9,9 @@ import { motion } from "framer-motion";
 const CAST = [
   { id: 1, name: "Robert Downey Jr.", role: "Doctor Doom", img: "https://upload.wikimedia.org/wikipedia/commons/9/94/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg" },
   { id: 2, name: "Pedro Pascal", role: "Mr. Fantastic", img: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Pedro_Pascal_by_Gage_Skidmore.jpg" },
-  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vanessa_Kirby_in_2024.jpg" },
-  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://upload.wikimedia.org/wikipedia/commons/6/69/Joseph_Quinn_by_Gage_Skidmore.jpg" },
-  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://upload.wikimedia.org/wikipedia/commons/d/db/Ebon_Moss-Bachrach_%2834710185121%29_%28cropped%29.jpg" },
+  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Vanessa_Kirby_at_the_2024_Toronto_International_Film_Festival_08_%28Cropped%29.jpg/500px-Vanessa_Kirby_at_the_2024_Toronto_International_Film_Festival_08_%28Cropped%29.jpg" },
+  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Joseph_Quinn_by_Gage_Skidmore.jpg/500px-Joseph_Quinn_by_Gage_Skidmore.jpg" },
+  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/EbonMossBachrach-byPhilipRomano.jpg/500px-EbonMossBachrach-byPhilipRomano.jpg" },
 ];
 
 export default function CastOverlay() {
