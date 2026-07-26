@@ -62,7 +62,6 @@ export default function TimelineInteractive() {
                   borderRadius: '16px', 
                   boxShadow: '0 20px 60px rgba(0,255,156,0.15)',
                   border: '1px solid rgba(0, 255, 156, 0.2)',
-                  imageRendering: 'high-quality',
                   objectFit: 'contain'
                 }} 
               />
