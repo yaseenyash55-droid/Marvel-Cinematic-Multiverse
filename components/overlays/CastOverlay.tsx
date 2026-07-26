@@ -7,11 +7,11 @@ import styles from "./cast.module.css";
 import { motion } from "framer-motion";
 
 const CAST = [
-  { id: 1, name: "Robert Downey Jr.", role: "Doctor Doom", img: "https://image.tmdb.org/t/p/w500/5qHNjhtjMD4YWH3UP0rm4tKwxIQ.jpg" },
-  { id: 2, name: "Pedro Pascal", role: "Mr. Fantastic", img: "https://image.tmdb.org/t/p/w500/lrsjncoCGfsIrcxoEhaVNEfsPpo.jpg" },
-  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://image.tmdb.org/t/p/w500/zluWlhTqC9gYntV2LdFf6zLqAvo.jpg" },
-  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://image.tmdb.org/t/p/w500/n5E8EhwB9xQ5F9X8U9YQYpZJ1oJ.jpg" },
-  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://image.tmdb.org/t/p/w500/7aD8hV5x9YfFvJ9iCjYk5Qf9M5N.jpg" },
+  { id: 1, name: "Robert Downey Jr.", role: "Doctor Doom", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/5qHNjhtjMD4YWH3UP0rm4tKwxIQ.jpg" },
+  { id: 2, name: "Pedro Pascal", role: "Mr. Fantastic", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/lrsjncoCGfsIrcxoEhaVNEfsPpo.jpg" },
+  { id: 3, name: "Vanessa Kirby", role: "Invisible Woman", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/zluWlhTqC9gYntV2LdFf6zLqAvo.jpg" },
+  { id: 4, name: "Joseph Quinn", role: "Human Torch", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/n5E8EhwB9xQ5F9X8U9YQYpZJ1oJ.jpg" },
+  { id: 5, name: "Ebon Moss-Bachrach", role: "The Thing", img: "https://images.weserv.nl/?url=image.tmdb.org/t/p/w500/7aD8hV5x9YfFvJ9iCjYk5Qf9M5N.jpg" },
 ];
 
 export default function CastOverlay() {
