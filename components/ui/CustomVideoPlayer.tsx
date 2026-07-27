@@ -15,6 +15,7 @@ export default function CustomVideoPlayer({ src, poster, autoPlay = true, startU
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(autoPlay);
   const [isMuted, setIsMuted] = useState(!startUnmuted); // Muted by default unless startUnmuted is true
+  const [isTheatreMode, setIsTheatreMode] = useState(false);
 
   const audioCtxRef = useRef<AudioContext | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
@@ -81,8 +82,36 @@ export default function CustomVideoPlayer({ src, poster, autoPlay = true, startU
     }
   };
 
+  const toggleFullScreen = () => {
+    if (videoRef.current) {
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        videoRef.current.requestFullscreen().catch(err => {
+          console.error("Error attempting to enable fullscreen:", err);
+        });
+      }
+    }
+  };
+
+  const toggleTheatreMode = () => {
+    setIsTheatreMode(!isTheatreMode);
+  };
+
   return (
-    <div className={styles.container}>
+    <div 
+      className={styles.container}
+      style={isTheatreMode ? {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: 9999,
+        borderRadius: 0,
+        backgroundColor: '#000'
+      } : {}}
+    >
       <video
         ref={videoRef}
         src={src}
@@ -160,6 +189,27 @@ export default function CustomVideoPlayer({ src, poster, autoPlay = true, startU
             />
             <span style={{ fontSize: '12px', minWidth: '36px', textAlign: 'right' }}>{volumeLevel}%</span>
           </div>
+
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={styles.controlBtn} 
+            onClick={toggleTheatreMode}
+            title={isTheatreMode ? "Exit Theatre Mode" : "Theatre Mode"}
+            style={{ marginLeft: '10px' }}
+          >
+            {isTheatreMode ? "✖️" : "🎦"}
+          </motion.button>
+
+          <motion.button 
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={styles.controlBtn} 
+            onClick={toggleFullScreen}
+            title="Full Screen"
+          >
+            ⛶
+          </motion.button>
         </div>
       </div>
     </div>
